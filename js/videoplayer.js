@@ -13,7 +13,6 @@ var videoPlayer;
     var paused = true;
 
     video.addEventListener('seeked', function() {
-        console.log('seeked');
         ctx.drawImage(video, 0, 0, 720/2, 480/2);
     });
 
@@ -22,7 +21,7 @@ var videoPlayer;
             video.currentTime = audioPlayer.currentTime % video.duration;
         }
         if (!paused) {
-            setTimeout(loop, 1000 / 10); // drawing at 30fps
+            setTimeout(loop, 1000 / 16); // drawing at 16fps
         }
     }
 
