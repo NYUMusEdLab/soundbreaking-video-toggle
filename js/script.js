@@ -33,16 +33,17 @@ function handleTimeUpdate(e) {
 }
 
 function initUI() {
-  document.getElementById('play-pause').addEventListener('click', togglePlayPause);
+  var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
+  document.getElementById('play-pause').addEventListener(clickEvent, togglePlayPause);
 
   var audioToggles = document.getElementsByClassName('circle');
   for (let i = 0; i < audioToggles.length; i++) {
     elt = audioToggles[i];
-    elt.addEventListener('click', toggleAudioTrack);
+    elt.addEventListener(clickEvent, toggleAudioTrack);
   }
 }
 
-function togglePlayPause() {
+function togglePlayPause(e) {
   if (videoPlayer.paused) {
     audioPlayer.play();
     videoPlayer.play();
@@ -52,9 +53,11 @@ function togglePlayPause() {
     videoPlayer.pause();
     this.classList.remove('playing');
   }
+  e.preventDefault();
+  e.stopPropagation();
 }
 
-function toggleAudioTrack() {
+function toggleAudioTrack(e) {
   var whichTrack = _audioTracks[this.dataset.src];
   audioPlayer.src = whichTrack;
   if (!videoPlayer.paused) {
@@ -63,4 +66,6 @@ function toggleAudioTrack() {
   document.getElementsByClassName('selected')[0].classList.toggle('selected');
   this.classList.add('selected');
 
+  e.preventDefault();
+  e.stopPropagation();
 }
