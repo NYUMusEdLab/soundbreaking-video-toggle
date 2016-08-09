@@ -14,13 +14,18 @@ var videoPlayer;
 
     video.addEventListener('seeked', function() {
         ctx.drawImage(video, 0, 0, 720/2, 480/2);
+        if (!paused) {
+            // 
+            loop();
+        }
     });
 
     function loop() {
         if (video.duration) {
             video.currentTime = audioPlayer.currentTime % video.duration;
-        }
-        if (!paused) {
+        } else if (!paused) {
+            // only use setTimeout if we are not ready to play,
+            // otherwise loop after seeking
             setTimeout(loop, 1000 / 16); // drawing at 16fps
         }
     }
