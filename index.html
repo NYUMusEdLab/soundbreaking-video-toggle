@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+<!-- 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+	</head>
+	<body>
+		<header class="page-header">
+			<div class="container">
+				<h1>Sound and Vision <small></small></h1>
+			</div>
+		</header>
+
+		<main class="container">
+			<div class="screen">
+				<canvas id="canvas"></canvas>
+				<video width="720" height="480" id="video" loop mute src="video/044610397-astronaut-tested-effects-remov.mp4"></video>
+				<audio
+					src="audio/Ukrainska_Orchestra_Michala_Thomasa_-_01_-_Kolomyjka_Buczaka.mp3"
+					id="audio">
+				</audio>
+			</div>
+
+			<nav class="controls">
+				<ul class="row list-unstyled">
+					<li class="col-xs-4">
+						<div class="circle selected" data-src="0">
+							<label class="circle__label">Sound 1</label>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div class="circle" data-src="1">
+							<label class="circle__label">Sound 2</label>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div class="circle" data-src="2">
+							<label class="circle__label">Sound 3</label>
+						</div>
+					</li>
+				</ul>
+
+				<div>
+					<div id="play-pause" class="play-pause"></div>
+				</div>
+			</nav>
+		</main>
+
+		<footer class="footer">
+			<div class="container text-muted">
+				Brought to you by musedlab
+			</div>
+		</footer>
+
+		<!-- scripts -->
+		<script src="libs/progressbar.min.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/videoplayer.js"></script>
+		<script src="js/audioplayer.js"></script>
+
+	</body>
+</html>
