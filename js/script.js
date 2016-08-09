@@ -1,3 +1,6 @@
+'use strict';
+console.log('use strict');
+
 document.addEventListener('DOMContentLoaded', init);
 
 var circle;
