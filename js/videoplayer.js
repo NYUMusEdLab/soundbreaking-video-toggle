@@ -6,17 +6,40 @@ var videoPlayer;
     var ctx    = canvas.getContext('2d');
     var video  = document.getElementById(videoID);
 
-    video.addEventListener('play', function () {
-        var $this = this; //cache
-        (function loop() {
-            if (!$this.paused && !$this.ended) {
-                ctx.drawImage($this, 0, 0, 720/2, 480/2);
-                setTimeout(loop, 1000 / 30); // drawing at 30fps
-            }
-        })();
-    }, 0);
+    // video.addEventListener('play', function (e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    // }, 0);
+    var paused = true;
 
-    return video;
+    video.addEventListener('seeked', function() {
+        console.log('seeked');
+        ctx.drawImage(video, 0, 0, 720/2, 480/2);
+    });
+
+    function loop() {
+        if (video.duration) {
+            video.currentTime = audioPlayer.currentTime % video.duration;
+        }
+        if (!paused) {
+            setTimeout(loop, 1000 / 10); // drawing at 30fps
+        }
+    }
+
+    return {
+        get paused() {
+            return paused;
+        },
+        play: function() {
+            video.load();
+            paused = false;
+            loop();
+        },
+        pause: function() {
+            paused = true;
+            clearTimeout(loop);
+        }
+    };
   };
 
   videoPlayer = VideoPlayer('canvas', 'video');

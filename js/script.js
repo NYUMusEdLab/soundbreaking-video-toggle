@@ -44,7 +44,7 @@ function initUI() {
 }
 
 function togglePlayPause(e) {
-  if (videoPlayer.paused) {
+  if (videoPlayer.paused ) {
     audioPlayer.play();
     videoPlayer.play();
     this.classList.add('playing');
