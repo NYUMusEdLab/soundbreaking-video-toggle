@@ -1,6 +1,3 @@
-'use strict';
-console.log('use strict');
-
 document.addEventListener('DOMContentLoaded', init);
 
 var circle;
@@ -40,7 +37,7 @@ function initUI() {
   document.getElementById('play-pause').addEventListener(clickEvent, togglePlayPause);
 
   var audioToggles = document.getElementsByClassName('circle');
-  for (let i = 0; i < audioToggles.length; i++) {
+  for (var i = 0; i < audioToggles.length; i++) {
     elt = audioToggles[i];
     elt.addEventListener(clickEvent, toggleAudioTrack);
   }
