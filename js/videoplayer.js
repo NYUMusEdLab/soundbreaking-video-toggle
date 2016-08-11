@@ -6,16 +6,12 @@ var videoPlayer;
     var ctx    = canvas.getContext('2d');
     var video  = document.getElementById(videoID);
 
-    // video.addEventListener('play', function (e) {
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    // }, 0);
     var paused = true;
 
     video.addEventListener('seeked', function() {
         ctx.drawImage(video, 0, 0, 720/2, 480/2);
         if (!paused) {
-            // 
+            // if we are not paused, seek to the next frame
             loop();
         }
     });
@@ -35,7 +31,7 @@ var videoPlayer;
             return paused;
         },
         play: function() {
-            video.load();
+            video.load(); // this should only need to happen once
             paused = false;
             loop();
         },
