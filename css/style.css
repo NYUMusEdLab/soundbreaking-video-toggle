@@ -1,6 +1,18 @@
-html, body {
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300);
+
+
+html
+{
 	height: 100%;
 	width: 100%;
+}
+
+.body {
+	height: 100%;
+	width: 100%;
+	background-color: #ececec;
+
+
 }
 
 .footer {
@@ -9,6 +21,9 @@ html, body {
 	width: 100%;
 	height: 60px;
 	background-color: #f5f5f5;
+	color: #b7b9bf;
+	text-align: center;
+	font-size: 12px;
 }
 
 .footer .container {
@@ -18,9 +33,10 @@ html, body {
 .screen {
 	width: 720px;
 	height: 480px;
-	background: black;
+	background: #fcfaed;
 	margin: 15px auto;
-	// padding: 20px;
+	// padding: 20px
+
 }
 
 .screen canvas {
@@ -38,7 +54,7 @@ html, body {
 	height: 100px;
 	margin: auto;
 	background: url('../img/icon-play-128.png') no-repeat;
-	background-color: rgb(10, 255, 20);
+	background-color: #8cefbf;
 	border-radius: 50%;
 	background-size: 60%;
 	background-position: center;
@@ -49,7 +65,7 @@ html, body {
 	background: url('../img/icon-pause-128.png') no-repeat;
 	background-size: 60%;
 	background-position: center;
-	background-color: rgb(255, 10, 20);
+	background-color: #ff2979;
 }
 
 nav.controls {
@@ -71,7 +87,7 @@ li .circle {
 }
 
 li .circle.selected {
-	background: yellow;
+	background: #52efef;
 }
 
 li .circle * {
@@ -92,7 +108,15 @@ li .circle * {
 
 /* overwrite bootstrap */
 header.page-header {
-	margin-top: 20px;
+	margin-top: 0;
+	background-color: #f5f5f5;
+	color: black;
+	font-family: "Open Sans";
+	font-size: 40px;
+	font-weight: 300;
+	margin: 0;
+	padding: 25px 0px;
+	text-align: center;
 }
 
 @media (max-width:720px) {
